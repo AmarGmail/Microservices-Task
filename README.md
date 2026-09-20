@@ -12,9 +12,11 @@ This document provides details on testing various services after running the `do
 - **Endpoints:**
   - **List Users:**  
     ```
-    curl http://localhost:3000/users
+    
+    hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task$ curl http://localhost:3000/users
+    [{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Smith"}]
     ```
-    Or open in your browser: [http://localhost:3000/users](http://localhost:3000/users)
+    
 
 ---
 
@@ -23,7 +25,8 @@ This document provides details on testing various services after running the `do
 - **Endpoints:**
   - **List Products:**  
     ```
-    curl http://localhost:3001/products
+    hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task$ curl http://localhost:3001/products
+    [{"id":1,"name":"Laptop","price":999},{"id":2,"name":"Phone","price":699}]
     ```
     Or open in your browser: [http://localhost:3001/products](http://localhost:3001/products)
 
@@ -35,7 +38,8 @@ This document provides details on testing various services after running the `do
 - **Endpoints:**
   - **List Orders:**  
     ```
-    curl http://localhost:3002/orders
+    hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task$ curl http://localhost:3002/orders
+    []
     ```
     Or open in your browser: [http://localhost:3002/orders](http://localhost:3002/orders)
 
@@ -46,11 +50,13 @@ This document provides details on testing various services after running the `do
 - **Endpoints:**
   - **Users:**  
     ```
-    curl http://localhost:3003/api/users
+    []hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task$ curl http://localhost:3003/api/users
+    [{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Smith"}]
     ```
   - **Products:**  
     ```
-    curl http://localhost:3003/api/products
+    hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task$ curl http://localhost:3003/api/products
+    [{"id":1,"name":"Laptop","price":999},{"id":2,"name":"Phone","price":699}]
     ```
   - **Orders:**  
     ```
@@ -80,7 +86,13 @@ This document provides details on testing various services after running the `do
 ## Instructions
 1. Start all services using the `docker-compose` file:
    ```
-   hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task/Microservices$ docker-compose up -d
+   hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task/Microservices$ docker compose up -d
+    [+] up 5/5
+    ✔ Network microservices_microservices-network Created                                                              0.0s
+    ✔ Container gateway-service                   Started                                                              0.4s
+    ✔ Container order-service                     Started                                                              0.4s
+    ✔ Container product-service                   Started                                                              0.4s
+    ✔ Container user-service                      Started    
 
    hi@USER:~/projects/herovired/skill_test_v1/Microservices-Task/Microservices$ docker ps
     CONTAINER ID   IMAGE                 COMMAND                  CREATED         STATUS         PORTS                                         NAMES
